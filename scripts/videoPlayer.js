@@ -11,6 +11,7 @@ export const videoPlayerInit = () =>{
     const videoButtonPlay = document.querySelector('.video-button__play');
     const videoButtonStop = document.querySelector('.video-button__stop');
     const videoProgress = document.querySelector('.video-progress');
+    const videoVolume = document.querySelector('.video-volume');
     const videoTimePassed = document.querySelector('.video-time__passed');
     const videoTimeTotal = document.querySelector('.video-time__total');
     const addZero = n => n < 10 ? '0' + n : n;
@@ -66,5 +67,9 @@ export const videoPlayerInit = () =>{
 
         videoPlayer.currentTime = (value * duration) / 100 ;
 
+    });
+
+    videoVolume.addEventListener('input', () => {
+        videoPlayer.volume = videoVolume.value / 100;
     });
 };
