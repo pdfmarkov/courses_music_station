@@ -1,5 +1,5 @@
 export const videoPlayerInit = () =>{
-    console.log('Video Init');
+    
 // video-player
 // video-button__play
 // video-button__stop
@@ -33,16 +33,15 @@ export const videoPlayerInit = () =>{
 
     const stopPlay = () => {
         videoPlayer.pause();
+        videoButtonPlay.classList.remove('fa-pause');
+        videoButtonPlay.classList.add('fa-play');
         videoPlayer.currentTime=0;
     };
 
     videoPlayer.addEventListener('click', togglePlay);
     videoButtonPlay.addEventListener('click', togglePlay);
 
-    videoPlayer.addEventListener('play', toggleIcon);
-    videoPlayer.addEventListener('pause', toggleIcon);
-
-    videoButtonStop.addEventListener('stop', stopPlay);
+    videoButtonStop.addEventListener('click', stopPlay);
 
     videoPlayer.addEventListener('timeupdate', () => {
         const currentTime = videoPlayer.currentTime;
