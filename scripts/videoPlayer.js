@@ -1,12 +1,5 @@
+import { addZero } from './supScript.js'
 export const videoPlayerInit = () =>{
-    
-// video-player
-// video-button__play
-// video-button__stop
-// video-time__passed
-// video-progress
-// video-time__total
-
     const videoPlayer = document.querySelector('.video-player');
     const videoButtonPlay = document.querySelector('.video-button__play');
     const videoButtonStop = document.querySelector('.video-button__stop');
@@ -14,7 +7,6 @@ export const videoPlayerInit = () =>{
     const videoVolume = document.querySelector('.video-volume');
     const videoTimePassed = document.querySelector('.video-time__passed');
     const videoTimeTotal = document.querySelector('.video-time__total');
-    const addZero = n => n < 10 ? '0' + n : n;
 
     const toggleIcon = () => {
         if (videoPlayer.paused) {
